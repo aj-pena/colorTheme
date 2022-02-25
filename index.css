@@ -65,22 +65,6 @@ body{
 .color-display{
     width: 110px;
 }
-/* hard-coded colors for layout design purposes */
-.color-0{
-    background-color: aqua;
-}
-.color-1{
-    background-color:bisque;
-}
-.color-2{
-    background-color:chartreuse;
-}
-.color-3{
-    background-color:cornflowerblue;
-}
-.color-4{
-    background-color: darkcyan;
-}
 /* Hex-codes display */
 .color-code{
     width: 110px;    

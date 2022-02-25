@@ -4,6 +4,7 @@ const container = document.getElementById('container')
 const colorPicker = document.getElementById('colorPicker')
 const schemeSelector = document.getElementById('schemes')
 const containerOfColors = document.getElementById('colors-container')
+const containerOfCodes = document.getElementById('codes-container')
 const baseURL = 'https://www.thecolorapi.com'
 let hex = 'FFFFFF' /** without the hash so that the api understands it */
 let mode = 'monochrome'
@@ -25,19 +26,31 @@ function schemeSelected(event){
     .then( data => {
         console.log(data)
         arrayOfColors = data.colors 
-        console.log(arrayOfColors)
-        // arrayOfColors[i].hex.value 
+        // needed info from data:  arrayOfColors[i].hex.value 
+        
+        //Resetting containers to avoid accumulation of data 
         containerOfColors.innerHTML = ''
+        containerOfCodes.innerHTML = ''
+        // Loop to generate the necessary divs to display colors and codes
         for(const color of arrayOfColors){
-            console.log(color.hex.value)
-            // create a div
+            //   COLORS
+            // create a div to display color
             const newColor = document.createElement('div')
             // // give div class of color-display
             newColor.classList.add('color-display')
             // // set background color to hex value
             newColor.style.backgroundColor = color.hex.value
-            // append div to div large
+            // append div to containerOfColors
             containerOfColors.appendChild(newColor)
+            //  CODES   
+            // create a div to display code
+            const newCode = document.createElement('div')
+            // give div class of color-code
+            newCode.classList.add('color-code')
+            // set inner text of div hex value of the color
+            newCode.innerText = color.hex.value
+            // append div to containerOfCodes
+            containerOfCodes.appendChild(newCode)
         }
 
     })
