@@ -10,16 +10,27 @@
 <body>
     <div id="container">
         <nav class="navbar">
-            <input class="color-picker" type="color">
-            <select class="scheme-picker">
-
-            </select>
+            <div class="flex-container">
+                <input class="color-picker" type="color">
+                <select class="scheme-picker">
+            
+                </select>
+            <button id="button" class="btn"> Get Color Scheme </button>
+            </div>            
         </nav>
         <div class="flex-container large">
             <div class="color-display color-0"></div>
+            <div class="color-display color-1"></div>
+            <div class="color-display color-2"></div>
+            <div class="color-display color-3"></div>
+            <div class="color-display color-4"></div>
         </div>
         <div class="flex-container small">
-            <div class="color-code color-0"></div>
+            <div class="color-code"></div>
+            <div class="color-code"></div>
+            <div class="color-code"></div>
+            <div class="color-code"></div>
+            <div class="color-code"></div>
         </div>
     </div>
     <script src="./index.js"></script>

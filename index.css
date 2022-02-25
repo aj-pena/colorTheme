@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+/* sizing of main sections */
+#container{
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+}
+.navbar{
+    height: 90px;
+    border: solid grey 1px;
+}
+.large{
+    height: 414px;
+}
+.small{
+    height: 46px;
+    background-color: lightgray;
+}
+/* flex container for organizing subsections */
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* navbar organization */
+.navbar .flex-container{
+    min-height: 90px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* Colors display */
+.color-display{
+    width: 110px;
+}
+/* hard-coded colors for layout design purposes */
+.color-0{
+    background-color: aqua;
+}
+.color-1{
+    background-color:bisque;
+}
+.color-2{
+    background-color:chartreuse;
+}
+.color-3{
+    background-color:cornflowerblue;
+}
+.color-4{
+    background-color: darkcyan;
+}
+/* Hex-codes display */
+.color-code{
+    width: 110px;
+    border: solid black 1px;
+}
