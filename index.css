@@ -1,5 +1,10 @@
+body{
+    font-size: 1rem;
+    font-family: 'Shippori Antique B1', sans-serif;
+}
 *{
     box-sizing: border-box;
+    color: #FFFFFF;
 }
 /* sizing of main sections */
 #container{
@@ -9,7 +14,7 @@
 }
 .navbar{
     height: 90px;
-    border: solid grey 1px;
+    background-color: #1F2937;
 }
 .large{
     height: 414px;
@@ -28,6 +33,29 @@
     min-height: 90px;
     justify-content: space-evenly;
     align-items: center;
+}
+.color-picker{
+    width: 51px;
+    height: 34px;
+    border: none;
+    padding: none;
+    border-radius: 5px;
+}
+.scheme-picker{
+    width: 312px;
+    height: 42px;
+    background-color: #1F2937;
+    border-radius: 3px; 
+    font-size: 1.05rem;   
+}
+.btn{
+    width: 123px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background-color: #3D4B60;
+    font-size: 0.8rem;
+    border-radius: 5px;
 }
 /* Colors display */
 .color-display{
@@ -52,5 +80,8 @@
 /* Hex-codes display */
 .color-code{
     width: 110px;
-    border: solid black 1px;
+    background-color: #1F2937;
+    text-align: center;
+    line-height: 46px;           /**setting line-height equal to height of element will center text vertically. Because it is a flexbox, the divs are stretching all the height of parent flexbox. Class 'small' is giving flexbox a height of 46 px */ 
+    font-size: 0.8rem;
 }
