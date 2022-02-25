@@ -8,25 +8,29 @@ body{
 }
 /* sizing of main sections */
 #container{
-    width: 550px;
+    width: 558px;
     height: 550px;
     margin: 0 auto;
+    background-color: #1F2937;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .navbar{
     height: 90px;
-    background-color: #1F2937;
 }
 .large{
     height: 414px;
+    border-radius: 10px;
 }
 .small{
     height: 46px;
-    background-color: lightgray;
 }
 /* flex container for organizing subsections */
 .flex-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;  
+    overflow: hidden;  
 }
 /* navbar organization */
 .navbar .flex-container{
@@ -79,8 +83,7 @@ body{
 }
 /* Hex-codes display */
 .color-code{
-    width: 110px;
-    background-color: #1F2937;
+    width: 110px;    
     text-align: center;
     line-height: 46px;           /**setting line-height equal to height of element will center text vertically. Because it is a flexbox, the divs are stretching all the height of parent flexbox. Class 'small' is giving flexbox a height of 46 px */ 
     font-size: 0.8rem;
