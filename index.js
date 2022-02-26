@@ -10,21 +10,16 @@ let hex = 'FFFFFF' /** without the hash so that the api understands it */
 let mode = 'monochrome'
 const count = 5
 let arrayOfColors = [];
-
-
 // function to retrieve the hex value of the color selected in the color picker
 function colorSelected(event){
     hex = event.target.value.slice(1)
-    console.log(hex)
 }
 // function to retrieve the value of the selected mode or scheme and make a fetch call with this value
 function schemeSelected(event){
     mode = event.target.value
-    console.log(mode)
     fetch(`${baseURL}/scheme?hex=${hex}&format=json&mode=${mode}&count=${count}`)
     .then( res => res.json())
     .then( data => {
-        console.log(data)
         arrayOfColors = data.colors 
         // needed info from data:  arrayOfColors[i].hex.value 
         
