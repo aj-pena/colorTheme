@@ -54,6 +54,7 @@ function schemeSelected(event){
         }
     })
 }
+// copies hex code to clipboard from hex codes container
 function CodetoClipboard(e){ 
     // capturing hex code
     let text = e.target.innerText  
@@ -66,12 +67,27 @@ function CodetoClipboard(e){
         alert('something went wrong')
     })  
 }
+// copies hex code to clipboard from background-color in color display divs
+function displaytoClipboard(e){
+    // capturing background color in rgb format
+    let bgColor = e.target.style.backgroundColor
+    // function to convert from rgb to hex code
+    const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+    // copy converted background color to hex code
+    navigator.clipboard.writeText(rgb2hex(bgColor))
+    .then( ()=> {
+        alert(`'${rgb2hex(bgColor)}' copied to the clipboard`)
+    })
+    .catch( () => {
+        alert('something went wrong')
+    })  
+}
 // Event listener for the color picker to retrieve a color seed that will be used in the Fetch call
 colorPicker.addEventListener('change', colorSelected)
 // Event listener for the color scheme selector to retrieve the selected mode and make the fetch call
 schemeSelector.addEventListener('change', schemeSelected)
 // Event listener for the color displays to copy hex code to clipboard
-
+containerOfColors.addEventListener('click', displaytoClipboard)
 // Event listener for the color codes to copy hex code to clipboard
 containerOfCodes.addEventListener('click', CodetoClipboard)
 
