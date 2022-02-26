@@ -11,7 +11,7 @@ let mode = 'monochrome'
 const count = 5
 let arrayOfColors = [];
 
-// console.log(`${baseURL}/scheme?hex=${hex.slice(1)}&format=json&mode=${mode}`)
+
 // function to retrieve the hex value of the color selected in the color picker
 function colorSelected(event){
     hex = event.target.value.slice(1)
@@ -52,16 +52,26 @@ function schemeSelected(event){
             // append div to containerOfCodes
             containerOfCodes.appendChild(newCode)
         }
-
     })
-    
-
 }
-
-// fetch("https://www.thecolorapi.com/scheme?hex=ffffff&format=json&mode=monochrome").then( res => res.json()).then( data => console.log(data) )
-
+function CodetoClipboard(e){ 
+    // capturing hex code
+    let text = e.target.innerText  
+    // copy captured hex code
+    navigator.clipboard.writeText(text)
+    .then( ()=> {
+        alert(`'${text}' copied to the clipboard`)
+    })
+    .catch( () => {
+        alert('something went wrong')
+    })  
+}
 // Event listener for the color picker to retrieve a color seed that will be used in the Fetch call
 colorPicker.addEventListener('change', colorSelected)
 // Event listener for the color scheme selector to retrieve the selected mode and make the fetch call
 schemeSelector.addEventListener('change', schemeSelected)
+// Event listener for the color displays to copy hex code to clipboard
+
+// Event listener for the color codes to copy hex code to clipboard
+containerOfCodes.addEventListener('click', CodetoClipboard)
 
