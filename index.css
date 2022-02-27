@@ -63,12 +63,17 @@ body{
 }
 .btn:hover,
 .btn:focus{
-    background-color: #788290;
+    background-color: #6487b8;
     cursor: pointer;
 }
 /* Colors display */
 .color-display{
     width: 110px;
+}
+.color-display:hover,
+.color-display:focus{
+    /* border-radius: 10px; */
+    border: solid rgb(255, 255, 255, .5) 10px;
 }
 /* Hex-codes display */
 .color-code{
@@ -76,4 +81,8 @@ body{
     text-align: center;
     line-height: 46px;           /**setting line-height equal to height of element will center text vertically. Because it is a flexbox, the divs are stretching all the height of parent flexbox. Class 'small' is giving flexbox a height of 46 px */ 
     font-size: 0.8rem;
+}
+.color-code:hover,
+.color-code:focus{
+    font-size: .95rem;
 }
