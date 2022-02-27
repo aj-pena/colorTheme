@@ -61,6 +61,11 @@ body{
     font-size: 0.8rem;
     border-radius: 5px;
 }
+.btn:hover,
+.btn:focus{
+    background-color: #788290;
+    cursor: pointer;
+}
 /* Colors display */
 .color-display{
     width: 110px;

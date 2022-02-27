@@ -3,6 +3,7 @@
 const container = document.getElementById('container')
 const colorPicker = document.getElementById('colorPicker')
 const schemeSelector = document.getElementById('schemes')
+const getSchemeBtn = document.getElementById('button')
 const containerOfColors = document.getElementById('colors-container')
 const containerOfCodes = document.getElementById('codes-container')
 const baseURL = 'https://www.thecolorapi.com'
@@ -10,18 +11,25 @@ let hex = 'FFFFFF' /** without the hash so that the api understands it */
 let mode = 'monochrome'
 const count = 5
 let arrayOfColors = [];
+
+// initialize app with basic scheme
+getScheme()
+
 // function to retrieve the hex value of the color selected in the color picker
 function colorSelected(event){
     hex = event.target.value.slice(1)
 }
 // function to retrieve the value of the selected mode or scheme and make a fetch call with this value
 function schemeSelected(event){
-    mode = event.target.value
+    mode = event.target.value    
+}
+// function to fetch the array of color schemes from the API
+function getScheme(){
     fetch(`${baseURL}/scheme?hex=${hex}&format=json&mode=${mode}&count=${count}`)
     .then( res => res.json())
     .then( data => {
         arrayOfColors = data.colors 
-        // needed info from data:  arrayOfColors[i].hex.value 
+        // info needed from data:  arrayOfColors[i].hex.value 
         
         //Resetting containers to avoid accumulation of data 
         containerOfColors.innerHTML = ''
@@ -81,6 +89,8 @@ function displaytoClipboard(e){
 colorPicker.addEventListener('change', colorSelected)
 // Event listener for the color scheme selector to retrieve the selected mode and make the fetch call
 schemeSelector.addEventListener('change', schemeSelected)
+// Event listener for the get scheme button
+getSchemeBtn.addEventListener('click', getScheme)
 // Event listener for the color displays to copy hex code to clipboard
 containerOfColors.addEventListener('click', displaytoClipboard)
 // Event listener for the color codes to copy hex code to clipboard
