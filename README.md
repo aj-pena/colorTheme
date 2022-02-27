@@ -35,7 +35,7 @@ Next, chose a color scheme mode from the dropdown list.
 
 Click on the 'Get color scheme' button to generate the color scheme based on your choice of seed and scheme mode.
 
-![Image of a generated color scheme](./Assets/Images/result.PNG "Color scheme havinb been generated")
+![Image of a generated color scheme](./Assets/Images/result.PNG "Color scheme having been generated")
 
 Click on the color rectangle or on the hexadecimal code shown below each color strip to copy the hexadecimal code to your clipboard. You are ready now to use it in your code!
 
